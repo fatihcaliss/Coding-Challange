@@ -22,6 +22,7 @@ function isValidWalk(arr) {
     }else return false;
 }
 ```
+<hr>
 
 <p>2.This is an interview question asked by Uber.
 
@@ -41,6 +42,7 @@ for(let i = 1; i <= x.length; i++){
 }return x.map((a) => sum/a);
 }
 ```
+<hr>
 <p>3.Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.</p>
 
 For example,<br>
@@ -63,3 +65,4 @@ function convert(num) {
 }
 convert(493193);
 ```
+<hr>
