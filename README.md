@@ -96,3 +96,43 @@ var countBits = function (n) {
 countBits(0); // returns 0, countBits(4) returns 1, countBits(4) retuns 3.
 ```
 <hr>
+<p>6.The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.</p>
+
+For example,<br>
+"din"      =>  "(((" <br>
+"recede"   =>  "()()()" <br>
+"Success"  =>  ")())())" <br>
+"(( @"     =>  "))(("  <br>
+
+[Question Link](https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/solutions/javascript)
+
+## Solution-1:
+
+```javascript
+function duplicateEncode(word){
+    return word.toLowerCase().split('').map((a,b,c) => c.indexOf(a) == c.lastIndexOf(a) ? '(' : ')').join('')
+}
+```
+## Solution-2:
+```javascript
+function duplicateEncode(word){
+    let arr = word.split("");
+    let obj = {};
+    for(let i = 0; i < arr.length; i++){
+        if(Object.keys(obj).includes(arr[i].toLowerCase())){
+            obj[(arr[i].toLowerCase())] += 1; 
+        }else{
+            obj[(arr[i].toLowerCase())] = 1;
+        }   
+    }
+    for(let i = 0; i<arr.length; i++){
+        if( obj[(arr[i].toLowerCase())] === 1){
+            arr[i] = "(";
+        }else{
+            arr[i] = ")";
+        }
+    }
+    return arr.join("")
+}
+```
+<hr>
