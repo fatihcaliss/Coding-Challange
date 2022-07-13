@@ -136,3 +136,20 @@ function duplicateEncode(word){
 }
 ```
 <hr>
+<p>7.Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.It should remove all values from list a, which are present in list b keeping their order.</p>
+
+For example,<br>
+arrayDiff([1,2],[1]) == [2]<br>
+<p>If a value is present in b, all of its occurrences must be removed from the other:</p>
+arrayDiff([1,2,2,2,3],[2]) == [1,3]<br>
+
+[Question Link](https://www.codewars.com/kata/523f5d21c841566fde000009/solutions/javascript)
+
+## Solution:
+
+```javascript
+function arrayDiff(a, b) {
+    return a.filter((e => !b.includes(e)))
+};
+```
+<hr>
