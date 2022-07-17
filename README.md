@@ -171,3 +171,24 @@ function countTheAnimals(animals) {
 }
 ```
 <hr>
+<p>9.In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.</p>
+
+For example:<br>
+
+dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].<br>
+
+dup(["kelless","keenness"]) = ["keles","kenes"].<br>
+
+Strings will be lowercase only, no spaces. See test cases for more examples.<br>
+
+
+[Question Link](https://www.codewars.com/kata/59f08f89a5e129c543000069/train/javascript)
+
+## Solution:
+
+```javascript
+function dup(s) {
+    return s.map(e => e.split("").filter((e,i,arr) => arr[i] != arr[i+1]).join(""))
+};
+```
+<hr>
